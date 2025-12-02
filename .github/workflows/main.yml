@@ -13,3 +13,7 @@ jobs:
     steps:
       - name: Clone the repo
         uses: actions/checkout@v6
+      - name: Install Python 3.9
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13' 
