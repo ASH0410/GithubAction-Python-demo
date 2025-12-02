@@ -1,6 +1,6 @@
 name: Build Python Code
 on:
-  workflow_dispatch:
+  workflow_dispatch: # manual run
   push:
     branches:
       - master
@@ -23,6 +23,9 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
       - name: Setup python PATH
-        run: echo "PYTHONPATH"=$GITHUB_WORKSPACE >> $GITHUB_ENV
+        run: |
+          echo $GITHUB_WORKSPACE
+          echo $GITHUB_ENV
+          echo "PYTHONPATH"=$GITHUB_WORKSPACE >> $GITHUB_ENV
       - name: Run test
         run: pytest
