@@ -25,7 +25,6 @@ jobs:
       - name: Setup python PATH
         run: |
           echo $GITHUB_WORKSPACE
-          cat $GITHUB_WORKSPACE
           echo $GITHUB_ENV
           cat $GITHUB_ENV
           echo "PYTHONPATH"=$GITHUB_WORKSPACE >> $GITHUB_ENV
