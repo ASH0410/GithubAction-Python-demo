@@ -11,7 +11,7 @@ env:
   UBUNTU_VERSION: 24.04 # Variable at WORKFLOW Level
 jobs:
   job1:
-    runs-on: ubuntu-${{UBUNTU_VERSION}}
+    runs-on: ubuntu-${{env.UBUNTU_VERSION}}
     env:
       PYTHON_VERSION: 3.9 #Variable at Job Level
     steps:
