@@ -7,16 +7,18 @@ on:
   pull_request:
     branches:
       - master
+env:
+  PYTHON_VERSION: 3.11 # Variable at WORKFLOW Level
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - name: Clone the repo
         uses: actions/checkout@v6
-      - name: Install Python 3.11
+      - name: Install Python ${{env.PYTHON_VERIOSN}}
         uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          python-version: ${{env.PYTHON_VERIOSN}}
       - name: Install Python dependencies
         run: |
           pip install pytest
