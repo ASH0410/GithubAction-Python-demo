@@ -8,10 +8,10 @@ on:
     branches:
       - master
 env:
-  RUNNER: 'ubuntu-latest' # Variable at WORKFLOW Level
+  PYTHON_VERSION: 3.9 # Variable at WORKFLOW Level
 jobs:
   job1:
-    runs-on: ${{env.RUNNER}}
+    runs-on: ubuntu-latest
     env:
       PYTHON_VERSION: 3.9 #Variable at Job Level
     steps:
